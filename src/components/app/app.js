@@ -62,8 +62,12 @@ export default class App extends Component {
       <ItemDetails
         itemId={5}
         getData={getStarship}
-        getImageUrl={getStarshipImage} />
-    )
+        getImageUrl={getStarshipImage}>
+        <Record field="model" label="Model" />
+        <Record field="length" label="Length" />
+        <Record field="passengers" label="Passengers" />
+      </ItemDetails>
+    );
 
     return (
       <div className="stardb-app">
