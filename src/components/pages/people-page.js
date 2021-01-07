@@ -15,8 +15,9 @@ export default class PeoplePage extends Component {
     const { selectedItem } = this.state
     return (
       <Row
-          left={<PersonList onItemSelected={this.onItemSelected} />}
-          right={<PersonDetails itemId={selectedItem} />} />
-    )
+        left={<PersonList onItemSelected={this.onItemSelected} />}
+        right={<PersonDetails itemId={selectedItem} />}
+      />
+    );
   }
 }
