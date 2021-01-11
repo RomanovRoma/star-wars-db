@@ -6,6 +6,7 @@ import SwapiService from '../../services/swapi-service'
 import "./item-list.css";
 
 const ItemList = (props) => {
+
   const { data, onItemSelected, children: renderLabel } = props;
 
   const items = data.map((item) => {
@@ -23,7 +24,11 @@ const ItemList = (props) => {
     );
   });
 
-  return <ul className="item-list list-group">{items}</ul>;
+  return (
+    <ul className="item-list list-group">
+      {items}
+    </ul>
+  );
 };
 
 ItemList.defaultProps = {
@@ -36,4 +41,6 @@ ItemList.propTypes = {
   children: PropTypes.func.isRequired
 }
 
-export default ItemList;
+const { getAllPeople } = new SwapiService()
+
+export default withData(ItemList, getAllPeople)
